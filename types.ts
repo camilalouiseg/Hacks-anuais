@@ -1,6 +1,7 @@
 export interface LogEntry {
   id: string;
   timestamp: number;
+  value?: number; // Stores the specific amount added (e.g., 1 for habits, 100 for money)
 }
 
 export interface Goal {

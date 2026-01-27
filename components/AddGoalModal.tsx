@@ -27,22 +27,22 @@ const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onAdd }) =
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl animate-fade-in">
-        <div className="flex justify-between items-center p-6 border-b border-slate-100">
-          <h2 className="text-xl font-bold text-slate-800">Nova Meta Anual</h2>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="bg-neutral-900 border border-neutral-800 rounded-2xl w-full max-w-md shadow-2xl animate-fade-in text-white">
+        <div className="flex justify-between items-center p-6 border-b border-neutral-800">
+          <h2 className="text-xl font-bold text-white">Nova Meta Anual</h2>
+          <button onClick={onClose} className="text-neutral-500 hover:text-white transition-colors">
             <X size={24} />
           </button>
         </div>
         
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Título da Meta</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-1.5">Título da Meta</label>
             <input
               type="text"
               required
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 bg-black border border-neutral-800 rounded-lg focus:ring-1 focus:ring-white focus:border-white outline-none transition-all text-white placeholder-neutral-600"
               placeholder="Ex: Ir na Academia"
               value={formData.title}
               onChange={e => setFormData({...formData, title: e.target.value})}
@@ -51,21 +51,21 @@ const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onAdd }) =
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Meta Anual</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-1.5">Meta Anual</label>
               <input
                 type="number"
                 required
                 min="1"
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full px-4 py-3 bg-black border border-neutral-800 rounded-lg focus:ring-1 focus:ring-white focus:border-white outline-none text-white"
                 value={formData.target}
                 onChange={e => setFormData({...formData, target: parseInt(e.target.value) || 0})}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Unidade</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-1.5">Unidade</label>
               <input
                 type="text"
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full px-4 py-3 bg-black border border-neutral-800 rounded-lg focus:ring-1 focus:ring-white focus:border-white outline-none text-white placeholder-neutral-600"
                 placeholder="Ex: vezes"
                 value={formData.unit}
                 onChange={e => setFormData({...formData, unit: e.target.value})}
@@ -74,9 +74,9 @@ const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onAdd }) =
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-1">Categoria</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-1.5">Categoria</label>
             <select
-              className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+              className="w-full px-4 py-3 bg-black border border-neutral-800 rounded-lg focus:ring-1 focus:ring-white focus:border-white outline-none text-white appearance-none"
               value={formData.category}
               onChange={e => setFormData({...formData, category: e.target.value as any})}
             >
@@ -90,7 +90,7 @@ const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onAdd }) =
           <div className="pt-4">
             <button
               type="submit"
-              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-200 transition-all"
+              className="w-full py-3 bg-white hover:bg-neutral-200 text-black font-bold rounded-xl shadow-lg transition-all"
             >
               Criar Meta
             </button>
